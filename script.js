@@ -11,7 +11,7 @@ let keys = {
 }
 
 let player = {
-    speed : 10,
+    speed : 7,
     score : 0
 };
 
@@ -137,6 +137,7 @@ function endGame(){
     gameArea.classList.add('hide')
     startScreen.innerHTML = "Game Over <br> Your final score is " + player.score + " Press here to restart the game...";
     var child = gameArea.firstChild;
+    pauseBackgroundMusic();
     while (child) {
       // Check if the child node is a div element
       if (child.nodeType === 1 && child.nodeName.toLowerCase() === 'div') {
@@ -148,6 +149,23 @@ function endGame(){
     }
 }
 
+function playBackgroundMusic() {
+    var bgMusic = document.getElementById("bgMusic");
+    bgMusic.play();
+}
+
+// Pause the background music
+function pauseBackgroundMusic() {
+    var bgMusic = document.getElementById("bgMusic");
+    bgMusic.pause();
+}
+
+// Adjust the volume of the background music (0 to 1)
+function setMusicVolume(volume) {
+    var bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = volume;
+}
+
 function start(){ 
     // console.log('clicked');
     //once clicked hide start screen and display game screen
@@ -156,6 +174,7 @@ function start(){
 
     player.start = true;
     requestAnimationFrame(gamePlay);
+    playBackgroundMusic();
 
     //creating a car
     let car = document.createElement('div');
