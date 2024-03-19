@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.startScreen{
+    position: absolute;
+    height : 100px;
+    width: 100%;
+    background: linear-gradient(90deg, #444 30%, #666 50%, #444 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    z-index : 2;
+    top: 0px;
+}
+
+.gameArea{
+    position: relative;
+    background: linear-gradient(90deg, #444 30%, #666 50%, #444 70%);
+    width: 300px;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.car, .enemy{
+    position: absolute;
+    bottom: 100px;
+    left: 200px;
+    width: 50px;
+    height: 100px;
+    /* background-color: #ccc; */
+    overflow: hidden;
+    background-size: cover;
+}
+
+.carImage, .enemyImg{
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.divider{
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    left : 145px;
+    top: 10px;
+    background-color: white;
+}
+
+.sideDivider{
+    position: absolute;
+    width: 10px;
+    height: 100vh;
+    left: 20px;
+    background-color: white;
+}
+
+
